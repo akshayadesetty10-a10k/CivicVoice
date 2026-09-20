@@ -1,60 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CivicVoice</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Connect CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <header>
-        <h1>🏙️ CivicVoice</h1>
-        <p>Report. Track. Improve.</p>
+    <!-- HEADER -->
+    <header class="navbar">
+
+        <div class="logo">
+            🏙️ <span>CivicVoice</span>
+        </div>
+
+        <div class="tagline">
+            Report. Track. Improve.
+        </div>
+
+        <button class="admin-btn">
+            Admin Dashboard
+        </button>
+
     </header>
 
-    <main>
 
-        <section class="report-box">
+    <!-- MAIN CONTENT -->
+    <main class="container">
 
-            <h2>Report a Civic Issue</h2>
+        <!-- LEFT SIDE: REPORT -->
+        <section class="report-card">
 
-            <button id="recordBtn">🎙️ Start Recording</button>
+            <div class="section-title">
 
-            <p class="or">OR</p>
+                <span class="icon">📢</span>
 
-            <label for="description">
-                Describe the problem
-            </label>
+                <div>
+                    <h2>Report a Civic Issue</h2>
+                    <p>
+                        Tell us what's wrong in your community.
+                    </p>
+                </div>
 
-            <textarea
-                id="description"
-                placeholder="Example: There is a large pothole near the college main gate..."
-            ></textarea>
+            </div>
 
-            <button id="analyzeBtn">
+
+            <!-- VOICE RECORDING -->
+            <div class="voice-section">
+
+                <button id="recordBtn" class="record-button">
+                    🎙️
+                    <span>Start Recording</span>
+                </button>
+
+                <p class="voice-text">
+                    Speak naturally. Our AI will understand your issue.
+                </p>
+
+            </div>
+
+
+            <!-- DIVIDER -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+
+            <!-- TEXT DESCRIPTION -->
+            <div class="form-group">
+
+                <label for="description">
+                    Describe the problem
+                </label>
+
+                <textarea
+                    id="description"
+                    placeholder="Example: There is a large pothole near the college main gate..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- LOCATION -->
+            <div class="location-box">
+
+                <span class="location-icon">📍</span>
+
+                <div>
+                    <strong>Location</strong>
+
+                    <p id="locationText">
+                        Current location will be detected
+                    </p>
+                </div>
+
+                <button id="locationBtn">
+                    Detect
+                </button>
+
+            </div>
+
+
+            <!-- ANALYZE BUTTON -->
+            <button id="analyzeBtn" class="analyze-button">
                 🤖 Analyze Report
             </button>
 
-            <div id="result"></div>
+
+            <!-- AI RESULT -->
+            <div id="result" class="result-box">
+
+                <div class="result-header">
+                    <span>🤖</span>
+                    <strong>AI Analysis</strong>
+                </div>
+
+
+                <div class="result-content">
+
+                    <!-- CATEGORY -->
+                    <div class="result-item">
+
+                        <span>Category</span>
+
+                        <strong id="category">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <!-- SEVERITY -->
+                    <div class="result-item">
+
+                        <span>Severity</span>
+
+                        <strong id="severity">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <!-- SUMMARY -->
+                    <div class="summary">
+
+                        <span>Summary</span>
+
+                        <p id="summary">
+                            Your AI analysis will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
-        <section class="map-box">
 
-            <h2>📍 Civic Issue Map</h2>
+        <!-- RIGHT SIDE: MAP -->
+        <section class="map-card">
 
+            <!-- MAP HEADER -->
+            <div class="map-header">
+
+                <div>
+
+                    <h2>📍 Live Civic Map</h2>
+
+                    <p>
+                        Reported issues in your area
+                    </p>
+
+                </div>
+
+                <button class="filter-btn">
+                    Filter
+                </button>
+
+            </div>
+
+
+            <!-- MAP -->
             <div id="map">
-                Map will appear here
+
+                <div class="map-placeholder">
+
+                    <div class="map-icon">
+                        🗺️
+                    </div>
+
+                    <h3>
+                        Live Issue Map
+                    </h3>
+
+                    <p>
+                        Civic issues will appear here
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAP LEGEND -->
+            <div class="legend">
+
+                <div>
+                    <span class="dot critical"></span>
+                    Critical
+                </div>
+
+                <div>
+                    <span class="dot high"></span>
+                    High
+                </div>
+
+                <div>
+                    <span class="dot medium"></span>
+                    Medium
+                </div>
+
+                <div>
+                    <span class="dot low"></span>
+                    Low
+                </div>
+
             </div>
 
         </section>
 
     </main>
 
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            🌍 CivicVoice — Technology for a better tomorrow
+        </p>
+
+    </footer>
+
+
+    <!-- Connect JavaScript -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
+
 </html>
