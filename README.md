@@ -1,4 +1,4 @@
-# 🏙️ CivicVoice
+# CivicVoice
 
 ### Your Voice. Your City.
 
@@ -10,7 +10,7 @@ From potholes and overflowing garbage to water leaks, broken streetlights, and u
 
 ---
 
-## 🚨 The Problem
+##  The Problem
 
 Every city has everyday problems that affect thousands of people:
 
@@ -36,7 +36,7 @@ Citizens often don't know:
 
 ---
 
-# 💡 Our Solution
+#  Our Solution
 
 CivicVoice creates a simple civic feedback loop:
 
