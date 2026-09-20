@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicVoice</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🏙️ CivicVoice</h1>
+        <p>Report. Track. Improve.</p>
+    </header>
+
+    <main>
+
+        <section class="report-box">
+
+            <h2>Report a Civic Issue</h2>
+
+            <button id="recordBtn">🎙️ Start Recording</button>
+
+            <p class="or">OR</p>
+
+            <label for="description">
+                Describe the problem
+            </label>
+
+            <textarea
+                id="description"
+                placeholder="Example: There is a large pothole near the college main gate..."
+            ></textarea>
+
+            <button id="analyzeBtn">
+                🤖 Analyze Report
+            </button>
+
+            <div id="result"></div>
+
+        </section>
+
+        <section class="map-box">
+
+            <h2>📍 Civic Issue Map</h2>
+
+            <div id="map">
+                Map will appear here
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
